@@ -25,7 +25,7 @@
     "core-js": "^2.5.4",
     "firebase": "^6.6.2",
     "flexboxgrid": "^6.3.1",
-    "rxjs": "~6.5.3",
+    "rxjs": "~6.5.4",
     "swiper": "^4.5.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
