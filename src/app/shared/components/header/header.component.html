@@ -1,0 +1,49 @@
+<mat-toolbar color= "primary">
+  <mat-toolbar-row *ngIf="isMobile">
+    <div class="row between-xs middle-xs header-row" >
+        <button mat-icon-button [matMenuTriggerFor]="menuRef">
+            <mat-icon >more_vert</mat-icon>
+        </button>
+        
+        <mat-menu #menuRef="matMenu">
+          <button mat-menu-item>
+            <mat-icon>home</mat-icon>
+            <a class="item" [routerLink]="[ '/home' ]" routerLinkActive="active">Inicio</a>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>add_circle_outline</mat-icon>
+            <a class="item" [routerLink]="[ '/products' ]" routerLinkActive="active">Productos</a>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>info</mat-icon>
+            <a class="item" [routerLink]="[ '/contact' ]" routerLinkActive="active">Contacto</a>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>work_outline</mat-icon>
+            <a class="item" [routerLink]="[ '/admin' ]" routerLinkActive="active">Panel de administrador</a>
+          </button>
+        </mat-menu>
+        <a routerLink="/order" mat-raised-button [matBadge]="total$ | async" matBadgeColor="warn">
+            <mat-icon>shopping_cart</mat-icon>
+            Carrito
+        </a>
+    </div>
+  </mat-toolbar-row>
+  <mat-toolbar-row *ngIf="!isMobile">
+    <div class="row between-xs middle-xs header-row">
+        <nav>
+            <a mat-button [routerLink]="[ '/home' ]" routerLinkActive="active">home</a>
+            <a mat-button [routerLink]="[ '/products' ]" routerLinkActive="active">products</a>
+            <a mat-button [routerLink]="[ '/contact' ]" routerLinkActive="active">contact</a>
+            <a mat-button [routerLink]="[ '/admin' ]" routerLinkActive="active">Panel de administrador</a>
+          </nav>
+          <a routerLink="/order" mat-raised-button [matBadge]="total$ | async" matBadgeColor="warn">
+            <mat-icon>shopping_cart</mat-icon>
+            Carrito
+          </a>
+          
+    </div>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+

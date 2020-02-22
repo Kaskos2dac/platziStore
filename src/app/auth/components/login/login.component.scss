@@ -1,0 +1,23 @@
+
+.form__container {
+    width: 100%;
+    
+}
+.card__content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+.row {
+    width: 98%;
+    margin: 1px;
+    padding: 1px;
+}
+
+@media(min-width: 769px) {
+    .form__container {
+        width: 700px;
+        
+    }   
+}

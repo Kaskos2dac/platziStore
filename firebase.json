@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/platzi-store-v7",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

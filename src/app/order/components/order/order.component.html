@@ -1,0 +1,52 @@
+<mat-horizontal-stepper>
+  <mat-step>
+    <ng-template matStepLabel>Sus productos</ng-template>
+    <div *ngIf="products$ | async as products">
+      <p *ngIf="products.length === 0">no hay productos</p>
+      <div class="row" *ngFor="let product of products">
+        <div class="col-xs-12 col-sm-2 col-md-2">
+          <div class="box">
+            <img class="image" [src]="product.image" alt="" />
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-5 col-md-5">
+          <div class="box">
+            {{ product.title }}
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-5 col-md-5">
+          <div class="box">
+            {{ product.price }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <button mat-button matStepperNext>Siguiente</button>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Datos personales</ng-template>
+    <div class="col-xs-12 col-md-4">
+            <div class="box">
+              <h3>Contacto</h3>
+              <mat-form-field>
+                <input matInput placeholder="Nombre y Apellido"  type="text">
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Digite su correo" [formControl]="emailField" type="email">
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Numero de contacto"  type="text">
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Dirección"  type="text">
+              </mat-form-field>
+            </div>
+          </div>
+          <div>
+            <button mat-button matStepperPrevious>Atras</button>
+            <button mat-raised-button [disabled]="emailField.invalid" (click)="sendMail()">enviar</button>
+          </div>
+  </mat-step>
+</mat-horizontal-stepper>
